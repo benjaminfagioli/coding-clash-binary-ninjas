@@ -1,7 +1,7 @@
 const fuerzaTest = [100, 150, 200, 250, 300, 350];
 const alturasTest = [150, 160, 170, 180, 190, 200];
-const pesosTest = [50, 60, 70, 80];
-const distanciaTest = 1400;
+const pesosTest = [0, 60, 70, 80];
+const distanciaTest = 100;
 
 const thor = (
   f = fuerzaTest,
@@ -20,6 +20,7 @@ const thor = (
     const alturaActual = a[i];
 
     for (const peso of p) {
+      if (peso === 0) continue; // daria distancia infita
       const distanciaActual = (fuerzaActual * alturaActual) / peso;
       distanciaActual >= D && distanciasLanzadas.push(distanciaActual);
     }
